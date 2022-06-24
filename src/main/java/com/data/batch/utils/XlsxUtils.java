@@ -3,10 +3,12 @@ package com.data.batch.utils;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -54,7 +56,8 @@ public class XlsxUtils {
 				value = cell.getCellFormula();
 				break;
 			case NUMERIC:
-				value = cell.getNumericCellValue() + "";
+				cell.setCellType(ct.STRING);
+				value = cell.getStringCellValue() + "";
 				break;
 			case STRING:
 				value = cell.getStringCellValue() + "";
