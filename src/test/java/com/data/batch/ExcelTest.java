@@ -1,5 +1,6 @@
 package com.data.batch;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -21,24 +22,42 @@ class ExcelTest {
 	
 	@Test
 	void contextLoads() throws Exception{
+	    
 		ApartmentsVO vo = null;
 		String filePath = "C:/test/List.xlsx";
 		List<List<String>> readList = XlsxUtils.readToList(filePath);
 		
 		//0.아파트 이름 1.주소 2.층수 3.동수 4.세대수 5.건립날짜 6.아파트여부
-		for(int i=0; i<readList.size(); i++) {
+		for(int i=0; i< readList.size(); i++) {
 			String type = readList.get(i).get(6);
 			if("아파트".equals(type)) {
 				String address = readList.get(i).get(1); //주소
-				String[] gps = addressHandler.convertAddrToGPS(address).split("/");
-				if(!"null".equals(gps)) {
-					String latitude = gps[1]; //위도
-					String longitude = gps[0]; //경도
+				String gps = addressHandler.convertAddrToGPS(address);
+				if(gps != null) {
+					String[] arrayGps = gps.split("/");
+					vo = new ApartmentsVO();
+					String latitude = arrayGps[1]; //위도
+					String longitude = arrayGps[0]; //경도
 					String apartmentsName = readList.get(i).get(0);//아파트 이름
-					String dongCount = readList.get(i).get(3); //동수
-					String sedaeCount = readList.get(i).get(4); //세대수 
+					double dongCount = Double.parseDouble(readList.get(i).get(3)); //동수
+					double sedaeCount = Double.parseDouble(readList.get(i).get(4)); //세대수 
+					String createAt =  readList.get(i).get(5);
+					
+					vo.setAddr(address);
+					vo.setLatitude(latitude);
+					vo.setLongitude(longitude);
+					vo.setDongCount((int) dongCount);
+					vo.setSedaeCount((int) sedaeCount);
+					vo.setApartmentsName(apartmentsName);
+					vo.setCreateAt(createAt);
+					vo.setGu("대덕구");
+					
+					batchMapper.insertApartments(vo);
+				
 				}
 			}
 		}
+		
+		
 	}
 }

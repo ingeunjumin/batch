@@ -16,4 +16,5 @@ public class ApartmentsVO {
 	private String longitude;
 	private boolean isSold; //분양예정 여부
 	private String createAt; //아파트 건립날짜
+	private String gu;
 }

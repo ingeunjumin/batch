@@ -5,10 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -16,7 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XlsxUtils {
 	@SuppressWarnings("resource")
-	public static List<List<String>> readToList(String path) {
+	public static List<List<String>> readToList(String path) throws Exception{
 		List<List<String>> list = new ArrayList<List<String>>();
 
 		try {
@@ -47,7 +47,7 @@ public class XlsxUtils {
 	}
 
 	@SuppressWarnings("incomplete-switch")
-	private static String cellReader(XSSFCell cell) {
+	private static String cellReader(XSSFCell cell) throws Exception{
 		String value = "";
 		CellType ct = cell.getCellType();
 		if (ct != null) {

@@ -11,7 +11,7 @@ import com.data.batch.utils.XlsxUtils;
 class ExcelTest_kang {
 
 	@Test
-	void contextLoads() {
+	void contextLoads() throws Exception {
 		String filePath = "C:/test/List.xlsx";
 		List<List<String>> readList = XlsxUtils.readToList(filePath);
 		

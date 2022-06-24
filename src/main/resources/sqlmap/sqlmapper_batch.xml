@@ -11,7 +11,8 @@
 			sedae_count,
 			latitude,
 			longitude,
-			create_at
+			create_at,
+			gu
 		)
 		VALUES
 		(
@@ -21,7 +22,8 @@
 			#{sedaeCount},
 			#{latitude},
 			#{longitude},
-			#{createAt}
+			DATE_FORMAT(#{createAt},'%Y-%m-%d'),
+			#{gu}
 		)
 	</insert>
 	
