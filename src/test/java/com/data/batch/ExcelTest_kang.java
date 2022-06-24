@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.data.batch.utils.XlsxUtils;
 
 @SpringBootTest
-class ExcelTest {
+class ExcelTest_kang {
 
 	@Test
 	void contextLoads() {
