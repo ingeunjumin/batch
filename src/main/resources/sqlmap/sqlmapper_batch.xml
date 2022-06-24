@@ -2,5 +2,27 @@
 <!-- MyBatis에게 Mapper 경로를 적어야 한다. -->
 <mapper namespace="com.data.batch.mapper.BatchMapper">
 	
+	<insert id="insertApartments">
+		INSERT INTO apartments
+		(
+			apartments_name,
+			addr,
+			dong_count,
+			sedae_count,
+			latitude,
+			longitude,
+			create_at
+		)
+		VALUES
+		(
+			#{apartmentsName},
+			#{addr},
+			#{dongCount},
+			#{sedaeCount},
+			#{latitude},
+			#{longitude},
+			#{createAt}
+		)
+	</insert>
 	
 </mapper>
