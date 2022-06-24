@@ -56,9 +56,13 @@ public class XlsxUtils {
 				value = cell.getCellFormula();
 				break;
 			case NUMERIC:
-				cell.setCellType(ct.STRING);
-				value = cell.getStringCellValue() + "";
-				break;
+				value = cell.getNumericCellValue() + "";
+				if(value.length() > 6) {
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    			    String date = sdf.format(cell.getDateCellValue());
+    			    value = date;
+				}
+			    break;
 			case STRING:
 				value = cell.getStringCellValue() + "";
 				break;
