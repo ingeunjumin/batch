@@ -22,7 +22,7 @@ public class openDataRestController {
 	 * comment : OpenData insert
 	 */
 	@CrossOrigin
-	@PostMapping("/openData")
+	@PostMapping("/open")
 	public int callSaveOpenData(@RequestBody OpenDataVO vo) {
 		return opendataservice.getInsertOpenData(vo);
 	}
