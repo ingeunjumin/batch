@@ -3,7 +3,7 @@
 <mapper namespace="com.data.batch.mapper.OpenDataMapper">
 	
 	<insert id="insertOpenData">
-		INSERT INTO apartments
+		INSERT INTO open_data
 		(
 			deal_amount AS dealAmount,
 			build_year AS buildYear,
