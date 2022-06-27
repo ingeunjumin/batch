@@ -1,0 +1,65 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- MyBatis에게 Mapper 경로를 적어야 한다. -->
+<mapper namespace="com.data.batch.mapper.OpenDataMapper">
+	
+	<insert id="insertApartments">
+		INSERT INTO apartments
+		(
+			deal_amount,
+			build_year,
+			deal_year,
+			road_name,
+			road_name_bonbun,
+			road_name_bunbun,
+			road_name_sigungu_code,
+			road_name_seq,
+			road_name_basement_code,
+			road_name_code,
+			dong,
+			bonbun,
+			bunbun,
+			sigungu_code,
+			eubmyundong_code,
+			land_code,
+			apartment_name,
+			deal_month,
+			deal_day,
+			serial_number,
+			area_for_exclusive_use,
+			Jibun,
+			regional_code,
+			floor,
+			cancel_deal_day,
+			cancel_deal_type
+		)
+		VALUES
+		(
+			#{deal_amount},
+			#{build_year},
+			#{deal_year},
+			#{road_name},
+			#{road_name_bonbun},
+			#{road_name_bunbun},
+			#{road_name_sigungu_code},
+			#{road_name_seq},
+			#{road_name_basement_code},
+			#{road_name_code},
+			#{dong},
+			#{bonbun},
+			#{sigungu_code},
+			#{eubmyundong_code},
+			#{land_code},
+			#{apartment_name},
+			#{deal_month},
+			#{deal_day},
+			#{serial_number},
+			#{area_for_exclusive_use},
+			#{Jibun},
+			#{regional_code},
+			#{floor},
+			#{cancel_deal_day},
+			#{cancel_deal_type}
+		)
+	</insert>
+	
+</mapper>
