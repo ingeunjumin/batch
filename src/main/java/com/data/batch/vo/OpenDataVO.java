@@ -26,7 +26,7 @@ public class OpenDataVO {
 	private String dealDay;//일
 	private String serialNumber;//일련번호
 	private String areaForExclusiveUse;//전용면적
-	private String Jibun;//지번
+	private String jibun;//지번
 	private String regionalCode;
 	private String floor;//층
 	private String cancelDealDay;//헤체사유발생일
