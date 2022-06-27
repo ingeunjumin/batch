@@ -2,7 +2,7 @@
 <!-- MyBatis에게 Mapper 경로를 적어야 한다. -->
 <mapper namespace="com.data.batch.mapper.OpenDataMapper">
 	
-	<insert id="insertApartments">
+	<insert id="insertOpenData">
 		INSERT INTO apartments
 		(
 			deal_amount AS dealAmount,
@@ -18,8 +18,8 @@
 			dong,
 			bonbun,
 			bunbun,
-			sigungu_code as sigunguCode,
-			eubmyundong_code as eubmyundongCode,
+			sigungu_code As sigunguCode,
+			eubmyundong_code As eubmyundongCode,
 			land_code AS landCode,
 			apartment_name AS apartmentName,
 			deal_month AS dealMonth,
