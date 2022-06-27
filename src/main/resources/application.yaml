@@ -5,6 +5,6 @@ mybatis:
 spring :
    datasource :
       driver-class-name : com.mysql.cj.jdbc.Driver
-      url : jdbc:mysql://localhost:3306/applyhome?useUnicode=true&charaterEncoding=utf-8&serverTimezone=UTC 
-      username : root
-      password : rkddlstjr
+      url : jdbc:mysql://sangwon-database.csnd3edwjp9u.ap-northeast-2.rds.amazonaws.com:3306/applyhome?useUnicode=true&charaterEncoding=utf-8&serverTimezone=UTC 
+      username : admin
+      password : tkddnjs0823

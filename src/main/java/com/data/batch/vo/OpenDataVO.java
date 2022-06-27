@@ -1,8 +1,12 @@
 package com.data.batch.vo;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 public class OpenDataVO {
 	private int aptNo;//openData번호
 	private String dealAmount;//거래유형
@@ -30,7 +34,6 @@ public class OpenDataVO {
 	private String regionalCode;
 	private String floor;//층
 	private String cancelDealDay;//헤체사유발생일
-	private boolean cancelDealType;//해체여부
 	
 	
 }

@@ -14,4 +14,6 @@ public interface BatchMapper {
 	 * comment : 아파트 테이블 데이터 set
 	 */
 	public int insertApartments(ApartmentsVO vo);
+	
+	
 }
