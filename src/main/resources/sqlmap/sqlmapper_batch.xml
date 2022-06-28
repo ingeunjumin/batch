@@ -6,24 +6,24 @@
 		INSERT INTO apartments
 		(
 			apartments_name,
+			price,
 			addr,
-			dong_count,
-			sedae_count,
+			gu,
+			dong,
 			latitude,
 			longitude,
-			create_at,
-			gu
+			create_at
 		)
 		VALUES
 		(
 			#{apartmentsName},
+			#{price},
 			#{addr},
-			#{dongCount},
-			#{sedaeCount},
+			#{gu},
+			#{dong},
 			#{latitude},
 			#{longitude},
-			DATE_FORMAT(#{createAt},'%Y-%m-%d'),
-			#{gu}
+			#{createAt}
 		)
 	</insert>
 	

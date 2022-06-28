@@ -46,10 +46,10 @@ class ExcelTest {
 					vo.setAddr(address);
 					vo.setLatitude(latitude);
 					vo.setLongitude(longitude);
-					vo.setDongCount((int) dongCount);
-					vo.setSedaeCount((int) sedaeCount);
+//					vo.setDongCount((int) dongCount);
+//					vo.setSedaeCount((int) sedaeCount);
 					vo.setApartmentsName(apartmentsName);
-					vo.setCreateAt(createAt);
+//					vo.setCreateAt(createAt);
 					vo.setGu("대덕구");
 					
 					batchMapper.insertApartments(vo);

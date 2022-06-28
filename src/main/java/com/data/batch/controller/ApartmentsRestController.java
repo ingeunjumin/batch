@@ -14,9 +14,9 @@ public class ApartmentsRestController {
 	@Autowired
 	private BatchService batchservice;
 	
-	@CrossOrigin
-	@PostMapping("/apt")
-	public int callSaveApartments(@RequestBody ApartmentsVO vo) {
-		return batchservice.getInsertApartments(vo);
-	}
+//	@CrossOrigin
+//	@PostMapping("/apt")
+//	public int callSaveApartments(@RequestBody ApartmentsVO vo) {
+//		return batchservice.getInsertApartments(vo);
+//	}
 }
