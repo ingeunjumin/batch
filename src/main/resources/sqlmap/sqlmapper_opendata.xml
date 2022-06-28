@@ -64,13 +64,12 @@
 	</insert>
 	
 	<select id="getGroupApart" resultType="OpenDataVO">
-		SELECT 
-			CONCAT(dong,' ',apartment_name) AS apartmentNameDong,
-			avg(deal_amount) AS dealAmountAge,
-			build_year AS buildYear,
-			gu,
-			dong,
-			Jibun 
+		SELECT  
+         CONCAT('대전 ',dong,' ',Jibun) AS addr,
+         apartment_name AS apartmentName,
+         avg(deal_amount) AS dealAmountAge,
+         build_year AS buildYear,
+         gu 
 		FROM open_data
 		GROUP BY CONCAT(dong,' ',apartment_name) 
 		ORDER BY count(*) DESC

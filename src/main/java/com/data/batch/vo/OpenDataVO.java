@@ -37,7 +37,7 @@ public class OpenDataVO {
 	private String latitude;//위도
 	private String longitude;//경도
 	private String gu;//구
-	private String apartmentNameDong;//아파트동
+	private String addr;//주소(위도경도구할주소)
 	private String dealAmountAge;//거래가평균
 	
 }
