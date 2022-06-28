@@ -29,7 +29,8 @@
 			jibun,
 			regional_code,
 			floor,
-			cancel_deal_day
+			cancel_deal_day,
+			gu
 		)
 		VALUES
 		(
@@ -57,7 +58,8 @@
 			#{jibun},
 			#{regionalCode},
 			#{floor},
-			#{cancelDealDay}
+			#{cancelDealDay},
+			#{gu}
 		)
 	</insert>
 	

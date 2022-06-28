@@ -36,5 +36,6 @@ public class OpenDataVO {
 	private String cancelDealDay;//헤체사유발생일
 	private String latitude;//위도
 	private String longitude;//경도
+	private String gu;//구
 	
 }
