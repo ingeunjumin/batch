@@ -69,6 +69,7 @@
          apartment_name AS apartmentName,
          avg(deal_amount) AS dealAmountAge,
          build_year AS buildYear,
+         dong,
          gu 
 		FROM open_data
 		GROUP BY CONCAT(dong,' ',apartment_name) 
