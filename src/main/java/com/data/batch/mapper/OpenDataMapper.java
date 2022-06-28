@@ -1,5 +1,7 @@
 package com.data.batch.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.data.batch.vo.OpenDataVO;
@@ -14,5 +16,7 @@ public interface OpenDataMapper {
 	 * comment : OpenData insert
 	 */
 	public int insertOpenData(OpenDataVO vo);
+	
+	public List<OpenDataVO> getGroupApart();
 
 }
