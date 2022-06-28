@@ -8,13 +8,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.data.batch.mapper.OpenDataMapper;
+import com.data.batch.utils.AddressHandler;
 import com.data.batch.vo.OpenDataVO;
 
 @Service
 public class OpenDataService {
 	@Autowired
 	private OpenDataMapper opendatamapper;
-	
+	@Autowired
+	private AddressHandler addressHandler;
 	
 	/**
 	 * @param vo
@@ -44,4 +46,5 @@ public class OpenDataService {
 		}
 		return opendatamapper.insertOpenData(vo);
 	}
+
 }
