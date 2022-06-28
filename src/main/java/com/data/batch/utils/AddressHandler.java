@@ -48,7 +48,6 @@ public class AddressHandler {
 
 			String longitude = jsonArrayAddr.get("x").toString();// 경도 127
 			String latitude = jsonArrayAddr.get("y").toString();// 위도 36
-			
 			return longitude + "/" + latitude;
 		}else {
 			return null;
