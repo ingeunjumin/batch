@@ -27,4 +27,44 @@
 		)
 	</insert>
 	
+	<select id="selectAllApartments" resultType="ApartmentsVO">
+		SELECT 
+			apartments_no AS apartmentsNo,
+			apartments_name AS apartmentsName,
+			gu,
+			dong
+		FROM apartments
+	</select>
+	
+	<select id="selectOpenData" resultType="OpenDataVO">
+		SELECT 
+			deal_amount AS dealAmount,
+			deal_year AS dealYear,
+			deal_month AS dealMonth,
+			deal_day AS dealDay,
+			apartment_name AS apartmentName
+		FROM open_data
+		WHERE apartment_name = #{apartmentName}
+	</select>
+	
+	<insert id="insertContract">
+		INSERT INTO history_sale_contract
+		(
+		apartments_no,
+		sale_price,
+		gu,
+		dong,
+		create_at
+		)
+		VALUES
+		(
+		#{apartmentsNo},
+		#{salePrice},
+		#{gu},
+		#{dong},
+		#{createAt}
+		)
+	</insert>
+	
+	
 </mapper>

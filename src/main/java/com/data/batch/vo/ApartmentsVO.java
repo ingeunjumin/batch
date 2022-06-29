@@ -1,6 +1,5 @@
 package com.data.batch.vo;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import lombok.Getter;
@@ -18,6 +17,5 @@ public class ApartmentsVO {
 	private String dong;// 지역 ex) 관저동, 원내동
 	private String latitude;
 	private String longitude;
-//	SimpleDateFormat Format = new SimpleDateFormat("yyyy");
 	private Date createAt; //아파트 건립날짜
 }

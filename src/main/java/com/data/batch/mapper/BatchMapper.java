@@ -1,8 +1,12 @@
 package com.data.batch.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.data.batch.vo.ApartmentsVO;
+import com.data.batch.vo.ContractVO;
+import com.data.batch.vo.OpenDataVO;
 
 @Mapper
 public interface BatchMapper {
@@ -15,5 +19,9 @@ public interface BatchMapper {
 	 */
 	public int insertApartments(ApartmentsVO vo);
 	
+	public List<ApartmentsVO> selectAllApartments();
 	
+	public List<OpenDataVO> selectOpenData(String apartmentName);
+	
+	public int insertContract(ContractVO vo);
 }
