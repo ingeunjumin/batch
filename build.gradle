@@ -28,8 +28,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-quartz'
 	// 웹 크롤링(jsoup)
 	implementation 'org.jsoup:jsoup:1.15.2'
-
-	
 }
 
 tasks.named('test') {

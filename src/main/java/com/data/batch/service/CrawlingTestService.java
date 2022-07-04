@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 @Component
 public class CrawlingTestService {
 	
-	@Scheduled(cron="0/3 * * * * *")
+	@Scheduled(cron="0/10 * * * * *")
     public void test2() {
         System.out.println("@Scheduled annotation : 3초에 1번씩 console 찍기");
         System.out.println("현재시간 ==> "+ new Date());
