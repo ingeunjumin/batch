@@ -1,16 +1,11 @@
 package com.data.batch.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.data.batch.mapper.BatchMapper;
 import com.data.batch.mapper.OpenDataMapper;
 import com.data.batch.utils.AddressHandler;
-import com.data.batch.vo.ApartmentsVO;
-import com.data.batch.vo.OpenDataVO;
 
 @Service
 public class BatchService {
