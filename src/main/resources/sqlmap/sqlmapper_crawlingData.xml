@@ -1,0 +1,24 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- MyBatis에게 Mapper 경로를 적어야 한다. -->
+<mapper namespace="com.data.batch.mapper.CrawlingDataMapper">
+
+	<insert id="insertApartmentsSubscription">
+		INSERT INTO crawling_data
+			(
+			apartments_name,
+			apartments_address,
+			latitude,
+			longitude,
+			apartments_subscription_date
+			)
+		VALUES
+			(
+			#{apartmentsName},
+			#{apartmentsAddress},
+			#{latitude},
+			#{longitude},
+			#{apartmentsSubscriptionDate}
+			)
+	</insert>
+
+</mapper>
