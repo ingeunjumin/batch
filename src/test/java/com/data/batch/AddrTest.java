@@ -1,5 +1,7 @@
 package com.data.batch;
 
+import java.nio.charset.StandardCharsets;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,9 +22,9 @@ public class AddrTest {
 	 */
 	@Test
 	void contextLoads() throws Exception{
-		String Jibun = " 556"; //지번 컬럼
-		String dong = " 가오동"; //동 컬럼
-		String addr = "대전"+dong+Jibun;
+		String Jibun = " 72-1"; //지번 컬럼
+		String dong = " 인동"; //동 컬럼
+		String addr = "대전광역시 동구 인동 72-1";
 		String result = addressHandler.convertAddrToGPS(addr);
 		if(result != null) {
 			String[] arr = result.split("/");
