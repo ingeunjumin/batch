@@ -20,5 +20,15 @@
 			#{apartmentsSubscriptionDate}
 			)
 	</insert>
+	<select id="selectInfoList" resultType="map">
+		SELECT
+			apartments_name,
+			apartments_address,
+			latitude,
+			longitude,
+			apartments_subscription_date
+		FROM 
+			crawling_data
+	</select>
 
 </mapper>

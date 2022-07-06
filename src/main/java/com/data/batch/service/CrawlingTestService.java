@@ -2,6 +2,8 @@ package com.data.batch.service;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -26,7 +28,7 @@ public class CrawlingTestService {
 	private CrawlingDataMapper crawlingDataMapper;
 	
 	
-	@Scheduled(cron="0 0 9 * * *")
+	@Scheduled(cron="0/5 * * * * *")
     public void test2() throws Exception{
         System.out.println("@Scheduled annotation : 매일 오전9시에 함수 실행하여 청약 데이터 insert");
         System.out.println("현재시간 ==> "+ new Date());
@@ -102,6 +104,7 @@ public class CrawlingTestService {
 	    System.out.println("================================");
 	    
 	    
+	    
 	    CrawlingDataVO vo = new CrawlingDataVO();
 	    vo.setApartmentsName(apartmentsName);
 	    vo.setApartmentsAddress(apartmentsAddress);
@@ -109,9 +112,17 @@ public class CrawlingTestService {
 	    vo.setLongitude(longitude);
 	    vo.setApartmentsSubscriptionDate(apartmentsSubscriptionDate);
 	    // 청약아파트의 주소의 지역이 대전광역시이었을 경우에만 insert
-	    if(vo.getApartmentsAddress().contains("대전광역시")) {
-	    	crawlingDataMapper.insertApartmentsSubscription(vo);
-	    	System.out.println("hello world!");
+	    List<Map<String,Object>> selectInfoList = crawlingDataMapper.selectInfoList(); // DB에 있는 전체 청약데이터 가져오기
+	    for(Map<String,Object> InfoAllList : selectInfoList) {
+	    	System.out.println(InfoAllList.get("apartments_address"));
+	    	if(!InfoAllList.get("apartments_address").equals(apartmentsAddress)) { //DB데이터의 주소와 크롤링한 데이터의 주소가 같지 않다면 if 실행
+	    		if(vo.getApartmentsAddress().contains("대전광역시")) { // 다시한번 주소가 "대전광역시"인지 필터링
+	    			crawlingDataMapper.insertApartmentsSubscription(vo);
+	    			System.out.println("hello world!");
+	    		}
+	    	}else if(InfoAllList.get("apartments_address").equals(apartmentsAddress)){
+	    		System.out.println("중복 데이터가 DB에 존재합니다.");
+	    	}
 	    }
 	}
 	
