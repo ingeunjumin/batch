@@ -28,7 +28,7 @@ public class CrawlingTestService {
 	private CrawlingDataMapper crawlingDataMapper;
 	
 	
-	@Scheduled(cron="0/5 * * * * *")
+	@Scheduled(cron="0 0 9 * * *")
     public void test2() throws Exception{
         System.out.println("@Scheduled annotation : 매일 오전9시에 함수 실행하여 청약 데이터 insert");
         System.out.println("현재시간 ==> "+ new Date());
@@ -117,7 +117,7 @@ public class CrawlingTestService {
 	    	System.out.println(InfoAllList.get("apartments_address"));
 	    	if(!InfoAllList.get("apartments_address").equals(apartmentsAddress)) { //DB데이터의 주소와 크롤링한 데이터의 주소가 같지 않다면 if 실행
 	    		if(vo.getApartmentsAddress().contains("대전광역시")) { // 다시한번 주소가 "대전광역시"인지 필터링
-	    			crawlingDataMapper.insertApartmentsSubscription(vo);
+	    			crawlingDataMapper.insertApartmentsSubscription(vo); // 웹크롤링 데이터 insert
 	    			System.out.println("hello world!");
 	    		}
 	    	}else if(InfoAllList.get("apartments_address").equals(apartmentsAddress)){
