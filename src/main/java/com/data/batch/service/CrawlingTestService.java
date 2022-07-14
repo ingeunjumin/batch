@@ -28,7 +28,7 @@ public class CrawlingTestService {
 	private CrawlingDataMapper crawlingDataMapper;
 	
 	
-	@Scheduled(cron="0 0 9 * * *")
+	@Scheduled(cron="0 0 9 * * *")//spring batch
     public void test2() throws Exception{
         System.out.println("@Scheduled annotation : 매일 오전9시에 함수 실행하여 청약 데이터 insert");
         System.out.println("현재시간 ==> "+ new Date());
