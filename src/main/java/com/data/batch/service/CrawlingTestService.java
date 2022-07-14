@@ -64,9 +64,12 @@ public class CrawlingTestService {
 		    //			 범어자이, 대구광역시 수성구 범어동 48-26번지 일원 [홈페이지] 
 		    //			 대전스카이자이르네, 대전광역시 동구 인동 72-1외 11필지 [홈페이지]
 	    	if(!"".equals(a)) {
+	    		System.out.println("apartments result ==> "+a);
 	    		String temp[] = a.split(","); // a의 결과에서 다시 ,를 기준으로 배열로 만듬.
 	    		String aptName = temp[0];
 	    		String address = temp[1];
+	    		System.out.println("aptName ==> "+aptName);
+	    		System.out.println("address ==> "+address);
 	    		String metropolitan[] = address.split(" ");
 	    		if("대전광역시".equals(metropolitan[1])) {
 	    			String addrArray[] = address.split("-");
@@ -88,9 +91,13 @@ public class CrawlingTestService {
 	    			 	apartmentsAddress = aptAdress;
 	    			 	
 	    			}
+	    		}else{
+	    			System.out.println("대전광역시는 없습니다.");
 	    		}
  	    	}
 	    }//end
+	    
+	    
 	    String[] gps = addressHandler.convertAddrToGPS(apartmentsAddress).split("/");
 	    String longitude = gps[0];
 	    String latitude = gps[1];
@@ -120,10 +127,13 @@ public class CrawlingTestService {
 	    			crawlingDataMapper.insertApartmentsSubscription(vo); // 웹크롤링 데이터 insert
 	    			System.out.println("hello world!");
 	    		}
-	    	}else if(InfoAllList.get("apartments_address").equals(apartmentsAddress)){
+	    	}else if(InfoAllList.get("apartments_address").equals(apartmentsAddress)){ //DB데이터와 웹에서 넘어온 데이터가 같은 정보(주소)라면 syso 실행
 	    		System.out.println("중복 데이터가 DB에 존재합니다.");
 	    	}
 	    }
+	    
+	    
+	    
 	}
 	
 
